@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Component = () => {
+const Header = () => {
 return(
   <div>
      
@@ -8,4 +8,4 @@ return(
 )
 }
 
-export default Component
+export default Header;
