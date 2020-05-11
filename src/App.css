@@ -23,3 +23,7 @@
 .App-intro {
   font-size: large;
 }
+
+* {
+  box-sizing: border-box;
+}
