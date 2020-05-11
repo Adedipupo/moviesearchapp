@@ -24,7 +24,7 @@ const App = () => {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=a56fe0c0`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.Response === "True") {
