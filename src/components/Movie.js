@@ -2,8 +2,11 @@ import React from 'react';
 
 const Movie = () => {
 return(
-  <div>
-     
+  <div className="Movie">
+     <h2>{Movie.title}</h2>
+     <div>
+         
+     </div>
   </div>
 )
 }
