@@ -52,3 +52,9 @@
   padding: 5px 25px 10px 25px;
   max-width: 25%;
 }
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
+}
