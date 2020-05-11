@@ -3,22 +3,20 @@ import React from 'react';
 const Search = (props) => {
     const [searchValue, setSearchValue] = useState("");
 
+    const handleSearchInputChanges = (e) => {
+        setSearchValue(e.target.value);
+    }
 
-const handleSearchInputChanges = (e) => {
-    setSearchValue(e.target.value);
-}
+    const resetInputField = () => {
+        setSearchValue("")
+    }
 
-const resetInputField = () => {
-    setSearchValue("")
-}
+    const callSearchFunction = (e) => {
+        e.preventDefault();
+        props.search(searchValue);
+        resetInputField();
+    }
 
-const callSearchFunction = (e) => {
-    e.preventDefault();
-    props.search(searchValue);
-    resetInputField();
-}
-
-const Search = () => {
 return(
     <form className="search">
         <input
