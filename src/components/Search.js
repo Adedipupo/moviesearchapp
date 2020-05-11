@@ -1,5 +1,12 @@
 import React from 'react';
 
+
+const callSearchFunction = (e) => {
+    e.preventDefault();
+    props.search(searchValue);
+    resetInputField();
+}
+
 const Search = () => {
 return(
     <form className="search">
