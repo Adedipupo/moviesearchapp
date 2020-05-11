@@ -4,6 +4,23 @@ import Header from "./components/Header";
 import Movie from "./components/Movie";
 import Search from "./components/Search";
 
+const MOVIE_API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=a56fe0c0";
+
+const App = () => {
+  const [loading, setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  useEffect(() => {
+    fetch(MOVIE_API_URL)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        setMovies(jsonResponse.Search);
+        setLoading(false);
+      });
+  }, []);
+
+
 function App() {
   return (
     <div className="App">
