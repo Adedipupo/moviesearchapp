@@ -41,3 +41,9 @@
 .add-movies {
   text-align: center;
 }
+
+.add-movies button {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 10px 30px 10px;
+}
