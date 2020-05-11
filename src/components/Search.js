@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-
+const handleSearchInputChanges = (e) => {
+    setSearchValue(e.target.value);
+}
 
 const resetInputField = () => {
     setSearchValue("")
