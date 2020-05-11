@@ -76,3 +76,8 @@ input[type="submit"] {
   margin-left: 5px;
   cursor: pointer;
 }
+
+input[type="submit"]:hover {
+  background-color: #282c34;
+  color: antiquewhite;
+}
