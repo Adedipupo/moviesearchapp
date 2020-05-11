@@ -81,3 +81,8 @@ input[type="submit"]:hover {
   background-color: #282c34;
   color: antiquewhite;
 }
+
+.search>input[type="text"] {
+  width: 40%;
+  min-width: 170px;
+}
