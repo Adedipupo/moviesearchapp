@@ -6,11 +6,11 @@ import Search from "./components/Search";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Header text="Movie Search App" />
       <Search />
       <Movie />
-    </>
+    </div>
   );
 }
 
