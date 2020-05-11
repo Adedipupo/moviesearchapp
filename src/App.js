@@ -39,36 +39,44 @@ const reducer = (state, action) => {
 
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+
     fetch(MOVIE_API_URL)
       .then(response => response.json())
       .then(jsonResponse => {
-        setMovies(jsonResponse.Search);
-        setLoading(false);
+
+        dispatch({
+          type: "SEARCH_MOVIES_SUCCESS",
+          payload: jsonResponse.Search
+        });
       });
   }, []);
 
   const search = searchValue => {
-    setLoading(true);
-    setErrorMessage(null);
+    dispatch({
+      type: "SEARCH_MOVIES_REQUEST"
+    });
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=a56fe0c0`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.Response === "True") {
-          setMovies(jsonResponse.Search);
-          setLoading(false);
+          dispatch({
+            type: "SEARCH_MOVIES_SUCCESS",
+            payload: jsonResponse.Search
+          });
         } else {
-          setErrorMessage(jsonResponse.Error);
-          setLoading(false);
+          dispatch({
+            type: "SEARCH_MOVIES_FAILURE",
+            error: jsonResponse.Error
+          });
         }
       });
   };
 
+  const { movies, errorMessage, loading } = state;
   return (
     <div className="App">
       <Header text="Movie Search App" />
