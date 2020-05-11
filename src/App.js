@@ -8,7 +8,8 @@ function App() {
   return (
     <div className="App">
       <Header text="Movie Search App" />
-      <Search />
+      <Search search={search}/>
+      <p className="App-intro">Sharing few of our favorite movies</p>
       <Movie />
     </div>
   );
