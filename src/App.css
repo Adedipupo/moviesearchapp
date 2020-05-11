@@ -33,3 +33,7 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.App-header h2 {
+  margin: 0;
+}
