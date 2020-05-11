@@ -10,7 +10,17 @@ function App() {
       <Header text="Movie Search App" />
       <Search search={search}/>
       <p className="App-intro">Sharing few of our favorite movies</p>
-      <Movie />
+      <div className="movies">
+        {loading && !errorMessage ? (
+          <span>loading...</span>
+        ) : errorMessage ? (
+          <div className="errorMessage">{errorMessage}</div>
+        ) : (
+              movies.map((movie, index) => (
+                <Movie key={`${index}-${movie.Title}`} movie={movie} />
+              ))
+            )}
+      </div>
     </div>
   );
 }
